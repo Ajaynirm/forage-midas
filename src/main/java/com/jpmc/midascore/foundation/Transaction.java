@@ -6,12 +6,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Transaction {
     private long senderId;
     private long recipientId;
-    private float amount;
+    private double amount;
 
     public Transaction() {
     }
 
-    public Transaction(long senderId, long recipientId, float amount) {
+    public Transaction(long senderId, long recipientId, double amount) {
         this.senderId = senderId;
         this.recipientId = recipientId;
         this.amount = amount;
@@ -33,11 +33,11 @@ public class Transaction {
         this.recipientId = recipientId;
     }
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(float amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

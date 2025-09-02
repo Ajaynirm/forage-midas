@@ -1,11 +1,14 @@
 package com.jpmc.midascore;
 
+import com.jpmc.midascore.Producer.KafkaProducer;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 @SpringBootTest
+@MockBean(KafkaProducer.class)
 class TaskOneTests {
     static final Logger logger = LoggerFactory.getLogger(TaskOneTests.class);
 
@@ -23,7 +26,10 @@ class TaskOneTests {
         }
         output.append("\n").append("---end output ---");
         logger.info(output.toString());
-
+//        while (true) {
+//            Thread.sleep(20000);
+//            logger.info("...");
+//        }
     }
 
 }
