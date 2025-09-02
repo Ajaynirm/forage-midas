@@ -19,11 +19,15 @@ public class TransactionRecord {
     @Column(nullable = false)
     double amount;
 
+    @Column
+    double incentives;
+
     public TransactionRecord(){}
-    public TransactionRecord(UserRecord senderId, UserRecord receiverId,double amount){
+    public TransactionRecord(UserRecord senderId, UserRecord receiverId,double amount,double incentives){
         this.senderId=senderId;
         this.receiverId=receiverId;
         this.amount=amount;
+        this.incentives=incentives;
     }
 
     public Long getId() {
@@ -34,12 +38,24 @@ public class TransactionRecord {
         return senderId;
     }
 
+    public double getIncentives() {
+        return incentives;
+    }
+
+    public void setIncentives(double incentives) {
+        this.incentives = incentives;
+    }
+
     public UserRecord getReceiverId() {
         return receiverId;
     }
 
     public double getAmount() {
         return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     @Override
@@ -49,6 +65,7 @@ public class TransactionRecord {
                 ", senderId=" + senderId +
                 ", receiverId=" + receiverId +
                 ", amount=" + amount +
+                ", incentives=" + incentives +
                 '}';
     }
 }

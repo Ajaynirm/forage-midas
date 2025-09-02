@@ -7,12 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.test.annotation.DirtiesContext;
 
 @SpringBootTest
 @DirtiesContext
-//@EmbeddedKafka(partitions = 1, brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"})
 public class TaskThreeTests {
     static final Logger logger = LoggerFactory.getLogger(TaskThreeTests.class);
 
@@ -37,7 +35,7 @@ public class TaskThreeTests {
             kafkaProducer.send(transactionLine);
         }
 
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
 
 
 
@@ -46,10 +44,10 @@ public class TaskThreeTests {
         logger.info("----------------------------------------------------------");
         logger.info("use your debugger to find out what waldorf's balance is after all transactions are processed");
         logger.info("kill this test once you find the answer");
-        while (true) {
-            Thread.sleep(20000);
-            System.out.println(userRepo.findById(5L));
-            logger.info("...");
-        }
+//        while (true) {
+//            Thread.sleep(20000);
+//            System.out.println(userRepo.findById(5L));
+//            logger.info("...");
+//        }
     }
 }
