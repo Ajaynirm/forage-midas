@@ -13,7 +13,7 @@ public class UserRecord {
     private String name;
 
     @Column(nullable = false)
-    private float balance;
+    private double balance;
 
     protected UserRecord() {
     }
@@ -21,11 +21,6 @@ public class UserRecord {
     public UserRecord(String name, float balance) {
         this.name = name;
         this.balance = balance;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("User[id=%d, name='%s', balance='%f'", id, name, balance);
     }
 
     public Long getId() {
@@ -36,11 +31,20 @@ public class UserRecord {
         return name;
     }
 
-    public float getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(float balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "UserRecord{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }
